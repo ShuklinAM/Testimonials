@@ -5,7 +5,40 @@
 
 <div class="testimonials">
 
+    <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+
     <?php if($testimonials->getSize()):?>
+
+        <h3><?php echo $this->__('Testimonials');?>:</h3>
+
+        <?php if(Mage::getSingleton('customer/session')->isLoggedIn()):?>
+
+            <button type="button" onclick="showTestimonialForm(this);"><?php echo $this->__('Add testimonial');?></button>
+
+            <form id="testimonial-form" style="display: none;" action="<?php echo Mage::getUrl('testimonials/index/add');?>" method="post">
+                <p><textarea name="testimonial" class="input-text required-entry"></textarea></p>
+                <p><button type="submit"><?php echo $this->__('Add');?></button></p>
+            </form>
+
+            <script type="text/javascript">
+
+                function showTestimonialForm(button) {
+                    var form = $('testimonial-form');
+
+                    if($(form).visible()) {
+                        form.hide();
+                        button.innerHTML = '<?php echo $this->__('Add testimonial');?>';
+                    } else {
+                        form.show();
+                        button.innerHTML = '<?php echo $this->__('Hide testimonial form');?>';
+                    }
+                }
+
+                new VarienForm('testimonial-form');
+
+            </script>
+
+        <?php endif;?>
 
         <?php foreach($testimonials as $testimonial):?>
             <div>

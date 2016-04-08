@@ -10,7 +10,8 @@ class Shuklin_Testimonials_Model_Testimonials extends Mage_Core_Model_Abstract
 
     public function getCollection()
     {
-        $collection = parent::getCollection();
+        $collection = parent::getCollection()
+            ->setOrder('created_at', 'DESC');
 
         $entityType = 'customer';
         $attributeModel = Mage::getModel('eav/entity_attribute');
