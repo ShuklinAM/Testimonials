@@ -69,6 +69,15 @@
             </updates>
         </layout>
     </frontend>
+    <adminhtml>
+        <layout>
+            <updates>
+                <testimonials>
+                    <file>testimonials.xml</file>
+                </testimonials>
+            </updates>
+        </layout>
+    </adminhtml>
     <admin>
         <routers>
             <adminhtml>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <menu>
+        <testimonials>
+            <title>Testimonials</title>
+            <sort_order>10000</sort_order>
+            <action>adminhtml/testimonials</action>
+        </testimonials>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <testimonials>
+                        <title>Testimonials</title>
+                        <sort_order>10000</sort_order>
+                        <action>adminhtml/testimonials</action>
+                    </testimonials>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
