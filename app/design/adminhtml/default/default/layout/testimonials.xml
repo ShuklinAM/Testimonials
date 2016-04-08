@@ -2,7 +2,15 @@
 <layout version="0.0.1">
     <adminhtml_testimonials_index>
         <reference name="content">
-            <block type="testimonials/adminhtml_list" name="aboutgrid"/>
+            <block type="testimonials/adminhtml_list" name="testimonials.grid"/>
         </reference>
     </adminhtml_testimonials_index>
+    <adminhtml_testimonials_add>
+        <update handle="adminhtml_testimonials_edit"/>
+    </adminhtml_testimonials_add>
+    <adminhtml_testimonials_edit>
+        <reference name="content">
+            <block type="testimonials/adminhtml_edit" name="testimonials.grid_edit"/>
+        </reference>
+    </adminhtml_testimonials_edit>
 </layout>
