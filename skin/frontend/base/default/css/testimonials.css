@@ -1,0 +1,26 @@
+.testimonials {
+    padding: 20px;
+}
+
+.testimonials label {
+    padding: 5px;
+}
+
+.testimonials .created-at {
+    font-size: 10px;
+}
+
+.testimonials .testimonial-content {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+.testimonials .testimonial-form {
+    margin-bottom: 20px;
+}
+
+.testimonials button {
+    margin: 5px 0;
+}

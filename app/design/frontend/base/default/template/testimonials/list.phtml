@@ -13,12 +13,13 @@
 
         <?php if(Mage::getSingleton('customer/session')->isLoggedIn()):?>
 
-            <button type="button" onclick="showTestimonialForm(this);"><?php echo $this->__('Add testimonial');?></button>
-
-            <form id="testimonial-form" style="display: none;" action="<?php echo Mage::getUrl('testimonials/index/add');?>" method="post">
-                <p><textarea name="testimonial" class="input-text required-entry"></textarea></p>
-                <p><button type="submit"><?php echo $this->__('Add');?></button></p>
-            </form>
+            <div class="testimonial-form">
+                <button class="button" type="button" onclick="showTestimonialForm(this);"><?php echo $this->__('Add testimonial');?></button>
+                <form id="testimonial-form" style="display: none;" action="<?php echo Mage::getUrl('testimonials/index/add');?>" method="post">
+                    <p><textarea name="testimonial" class="input-text required-entry"></textarea></p>
+                    <p><button type="submit" class="button"><?php echo $this->__('Add');?></button></p>
+                </form>
+            </div>
 
             <script type="text/javascript">
 
@@ -46,8 +47,8 @@
                     <a href="mailto:<?php echo $testimonial->getCustomerEmail();?>"><?php echo $testimonial->getCustomerEmail();?></a>
                     <?php echo $testimonial->getCustomerFirstName(), ' ', $testimonial->getCustomerLastName();?>
                 </label>
-                <div><?php echo $helper->getFormattedDate($testimonial->getCreatedAt());?></div>
-                <div><?php echo $testimonial->getTestimonial();?></div>
+                <div class="created-at"><?php echo $helper->getFormattedDate($testimonial->getCreatedAt());?></div>
+                <div class="testimonial-content"><?php echo $testimonial->getTestimonial();?></div>
             </div>
         <?php endforeach;?>
 

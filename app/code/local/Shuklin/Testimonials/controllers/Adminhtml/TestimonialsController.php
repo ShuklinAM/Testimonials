@@ -9,6 +9,14 @@ class Shuklin_Testimonials_Adminhtml_TestimonialsController extends Mage_Adminht
         $this->renderLayout();
     }
 
+    public function addAction()
+    {
+        $this->_title($this->__('Add testimonial'));
+        $this->loadLayout();
+        $this->_setActiveMenu('testimonials');
+        $this->renderLayout();
+    }
+
     public function editAction()
     {
         $this->_title($this->__('Edit testimonial'));

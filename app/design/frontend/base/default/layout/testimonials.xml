@@ -18,6 +18,9 @@
         </reference>
         <reference name="head">
             <action method="setTitle" translate="title"><title>Testimonials</title></action>
+            <action method="addCss">
+                <path>css/testimonials.css</path>
+            </action>
         </reference>
         <reference name="content">
             <block type="testimonials/list" name="testimonials_list"/>
