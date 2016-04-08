@@ -58,6 +58,13 @@ class Shuklin_Testimonials_Block_Adminhtml_List_Grid extends Mage_Adminhtml_Bloc
             'index'         => 'customer_last_name'
         ));
 
+        $this->addColumn('created_at', array(
+            'header'        => $this->__('Created at'),
+            'align'         => 'right',
+            'filter'  => false,
+            'index'         => 'created_at'
+        ));
+
         $this->addColumn('action', array(
             'header'    => $this->__('Action'),
             'width'     => '50px',
