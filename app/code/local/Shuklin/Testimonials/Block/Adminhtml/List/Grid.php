@@ -13,7 +13,7 @@ class Shuklin_Testimonials_Block_Adminhtml_List_Grid extends Mage_Adminhtml_Bloc
     protected function _prepareCollection()
     {
         $collection = Mage::getModel('testimonials/testimonials')
-            ->getCollection();
+            ->getCollection(false);
         $this->setCollection($collection);
 
         return parent::_prepareCollection();
