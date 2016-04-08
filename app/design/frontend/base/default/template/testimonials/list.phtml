@@ -1,0 +1,28 @@
+<?php
+    $helper = Mage::helper('testimonials');
+    $testimonials = $this->getCollection();
+?>
+
+<div class="testimonials">
+
+    <?php if($testimonials->getSize()):?>
+
+        <?php foreach($testimonials as $testimonial):?>
+            <div>
+                <label>
+                    <a href="mailto:<?php echo $testimonial->getCustomerEmail();?>"><?php echo $testimonial->getCustomerEmail();?></a>
+                    <?php echo $testimonial->getCustomerFirstName(), ' ', $testimonial->getCustomerLastName();?>
+                </label>
+                <div><?php echo $helper->getFormattedDate($testimonial->getCreatedAt());?></div>
+                <div><?php echo $testimonial->getTestimonial();?></div>
+            </div>
+        <?php endforeach;?>
+
+        <?php echo $this->getPagerHtml();?>
+
+    <?php else:?>
+
+        <p><strong><?php echo $this->__('There are no testimonials yet');?></strong></p>
+
+    <?php endif;?>
+</div>
